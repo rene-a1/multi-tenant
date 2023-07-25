@@ -1,18 +1,16 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: resources
 #
 #  id           :bigint           not null, primary key
 #  discarded_at :datetime
-#  email        :string
-#  first_name   :string
-#  last_name    :string
+#  title        :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 require "test_helper"
 
-class UserTest < ActiveSupport::TestCase
+class ResourceTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

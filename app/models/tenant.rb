@@ -16,8 +16,6 @@
 #
 class Tenant < ApplicationRecord
   include Discard::Model
-  has_many :tenant_users, dependent: destroy
-  has_many :users, through: :tenant_users
 
   after_discard do
     tenant_users.discard_all

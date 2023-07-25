@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
+  get 'tenant/create'
+  get 'resources/show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-  namespace :api do
-    namespace :v1 do
+
+      resources :users
       resources :tenants do
         resources :resources
       end
-    end
-  end      
+
+
 end
