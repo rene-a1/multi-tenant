@@ -15,11 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_25_154725) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "resources", force: :cascade do |t|
+  create_table "resources", primary_key: ["tenant_id", "id"], force: :cascade do |t|
+    t.bigserial "id", null: false
+    t.bigint "tenant_id", null: false
     t.string "title"
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tenant_id"], name: "index_resources_on_tenant_id"
   end
 
   create_table "tenant_users", force: :cascade do |t|

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
       resources :users
+      resources :tenant_users
       resources :tenants do
         resources :resources
       end
